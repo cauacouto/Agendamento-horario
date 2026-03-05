@@ -9,13 +9,15 @@ import java.util.List;
 
 public interface AgendamentoRepository extends JpaRepository<Agendamento,Long> {
 
-    Agendamento findByServicoAndHorarioAgendamentoBetween(String servico, LocalDateTime HoraInicio,LocalDateTime HoraFinal);
-
-@Transactional
-    void DeleteByDataHoraAgendamentoAndCliente(LocalDateTime dataHoraAgendamento,String cliente);
+    Agendamento findByServicoAndDataHoraAgendamentoBetween(String servico, LocalDateTime dataHoraInicio,
+                                                           LocalDateTime dataHoraFinal);
 
 
-   Agendamento findyByDataHoraAgendamentoAndCliente(LocalDateTime dataHoraAgendamento,String cliente);
+    @Transactional
+    void deleteByDataHoraAgendamentoAndCliente(LocalDateTime dataHoraAgendamento, String cliente);
 
-    List<Agendamento> findyByDataHoraAgendamentoBetween(LocalDateTime horarioIncial, LocalDateTime horarioFinal);
+
+    Agendamento findByDataHoraAgendamentoAndCliente(LocalDateTime dataHoraAgendamento, String cliente);
+
+    List<Agendamento> findByDataHoraAgendamentoBetween(LocalDateTime dataHoraInicial, LocalDateTime dataHoraFinal);
 }
