@@ -1,21 +1,13 @@
 package com.coutodev.agendamento_horario.infrastructure.Entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "agendamento")
-@Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+
 
 public class Agendamento {
 
@@ -78,6 +70,7 @@ public class Agendamento {
         this.profissional = profissional;
     }
 
+
     public LocalDateTime getHorarioInsercao() {
         return HorarioInsercao;
     }
@@ -85,6 +78,8 @@ public class Agendamento {
     public void setHorarioInsercao(LocalDateTime horarioInsercao) {
         HorarioInsercao = horarioInsercao;
     }
+
+
 }
 
 
